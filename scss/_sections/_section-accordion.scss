@@ -1,0 +1,84 @@
+.section-accordion {
+    padding: 80px 0;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        padding: 40px;
+    }
+    background-color: $light-grey;
+
+    .accordion-title {
+        font-size: 40px;
+        font-weight: 300;
+        text-align: center;
+        color: $black;
+        margin-bottom: 41px;
+
+        @media screen and (max-width: $breakpoint-lg) {
+            font-size: 28px;
+        }
+    }
+
+    .accordion-wrapper {
+
+        .accordion-part {
+            border-bottom: 2px solid $grey;
+            
+            .accordion-subtitle {
+                font-size: 24px;
+                font-weight: 700;
+                color: $white;
+                padding: 24px;
+                background-color: $primary-berry;
+                position: relative;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+
+                @media screen and (max-width: $breakpoint-lg) {
+                    font-size: 18px;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 9px;
+                    height: 9px;
+                    right: 29px;
+                    top: 31px;
+                    border-bottom: 2px solid $white;
+                    border-right: 2px solid $white;
+                    transform: rotate(45deg);
+                    transition: transform 0.3s;
+                }
+            }
+            .accordion-text {
+                display: none;
+                padding: 24px;
+                background-color: $white;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 27px;
+                color: $black;
+
+                @media screen and (max-width: $breakpoint-lg) {
+                font-size: 16px;
+                }
+            }
+
+            &.open {
+                .accordion-subtitle {
+                background-color: $primary-berry;
+                color: $white;
+
+                &::after {
+                    border-color: $white;
+                    transform: rotate(-135deg);
+                }
+                }
+
+                .accordion-text {
+                display: block;
+                }
+            }   
+        }
+    }
+}

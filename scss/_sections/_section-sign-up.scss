@@ -1,0 +1,64 @@
+.section-sign-up {
+    padding: 80px;
+    background-color: $primary-berry;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        padding: 40px;
+    }
+
+    .sign-up-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: $breakpoint-lg) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sign-up-info {
+            width: 65%;
+
+            @media screen and (max-width: $breakpoint-lg) {
+                width: 100%;
+            }
+            .sign-up-title {
+                font-size: 32px;
+                font-weight: 300;
+                line-height: 41px;
+                color: $white;
+                margin-bottom: 24px;
+
+                @media screen and (max-width: $breakpoint-lg) {
+                    font-size: 24px;
+                }
+            }
+            .sign-up-icon {
+                display: flex;
+                justify-content: start;
+                gap: 16px;
+                // .s-icon {
+                //     margin-right: 16px;
+                // }  
+                
+                @media screen and (max-width: $breakpoint-lg) {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .sign-up-btn {
+            padding: 14px 24px;
+            text-align: center;
+            color: $white;
+            border-radius: 48px;
+            border: 1px solid $white;
+            background-color: $primary-berry;
+
+            @media screen and (max-width: $breakpoint-lg) {
+                margin-top: 20px;
+                width: 100%;
+            }
+        }
+    }
+}

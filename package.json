@@ -1,0 +1,37 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "Modernized Gulp 4 setup for compiling SCSS and minifying CSS",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "lint:js": "standard js/*.js --fix",
+    "lint:css": "stylelint scss/*.scss --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.79.4",
+    "standard": "^17.1.0",
+    "stylelint": "^16.8.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-sass-guidelines": "^12.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.4.0"
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/**",
+      "**/vendor/**.js"
+    ]
+  },
+  "dependencies": {}
+}

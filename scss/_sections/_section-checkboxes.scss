@@ -1,0 +1,401 @@
+.section-checkboxes {
+    background-color: $light-grey;
+
+    .checkboxes-heading {
+        padding: 30px;
+        min-height: 67px;
+        background-color: $primary-berry;
+        text-align: center;
+        font-size: 56px;
+        font-weight: 300;
+        color: $white;
+
+        @media screen and (max-width: $breakpoint-lg) {
+            font-size: 28px;
+            padding: 20px;
+        }
+    }
+
+    .checkboxes-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 80px 0;
+
+        @media screen and (max-width: $breakpoint-lg) {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .checkboxes-L-wrap {
+            width: 27%;
+
+            @media screen and (max-width: $breakpoint-lg) {
+                width: 100%;
+            }
+
+            
+        .checkboxes-L {
+            padding: 0 0 24px 0;
+            background-color: $white;
+            box-shadow: 2px 2px 8px 2px $grey2;
+            
+
+            .check-title {
+                padding: 24px 16px;
+                background-color: $primary-berry;
+                font-size: 16px;
+                font-weight: 700;
+                color: $white;
+
+                @media screen and (max-width: $breakpoint-lg) {
+                    font-size: 18px;
+                }  
+            }
+
+            .check-wrap {
+                padding: 0 16px;
+
+                .check-part.open {
+                    border-bottom: 1px solid $grey4;
+                    padding-bottom: 10px;
+
+                    .check-subtitle {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: $black;
+                        margin-bottom: 12px;
+                        margin-top: 12px;
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 9px;
+                            height: 9px;
+                            right: 4px;
+                            top: 3px;
+                            border-bottom: 2px solid $black;
+                            border-right: 2px solid $black;
+                            transform: rotate(45deg);
+                            cursor: pointer;
+                        } 
+                    }
+
+                    .check-info2 {
+                        display: block;
+                        .radio-check2 {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 14px;
+                            color: $black;
+                           
+                            .input-radio2 {
+                                width: 24px;
+                                height: 24px;
+                                margin-right: 16px;
+                            }
+
+                            input[type=radio]:checked {
+                                appearance: none;
+                                border-radius: 50%;
+                                border: 2px solid $primary-red;
+                                background-color: $white;
+                                background-image: url(../img/Ellipse.png);
+                                background-repeat: no-repeat;
+                                background-position: 50%;
+                            }
+                        }
+                        .check-subsubtitle {
+                            font-size: 14px;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .check-info2 {
+                        display: block;
+                        .input-check-info2 {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 14px;
+
+                            .info-input-checked2 {
+                                width: 24px;
+                                height: 24px;
+                                margin-right: 16px;
+                            }
+
+                            input[type=checkbox]:checked {
+                                appearance: none;
+                                background-color: $primary-red;
+                                background-image: url(../img/icon.png);
+                                background-repeat: no-repeat;
+                                background-position: 50%;
+                            }
+
+                        }
+                        .check-subsubtitle {
+                            font-size: 14px;
+                            font-weight: 700;
+                        }
+                    } 
+                }
+
+                .check-part {
+                    border-bottom: 2px solid $grey4;
+                    .check-subtitle {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: $black;
+                        margin-bottom: 12px;
+                        margin-top: 12px;
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            width: 9px;
+                            height: 9px;
+                            right: 4px;
+                            top: 3px;
+                            border-bottom: 2px solid $black;
+                            border-right: 2px solid $black;
+                            transform: rotate(-45deg);
+                            cursor: pointer;
+                        }
+                    }
+
+                    .check-info2 {
+                        display: none;
+                    }
+                }
+            }
+
+            .check-form {
+                margin-top: 24px;
+                padding: 0 16px;
+                
+
+                .check-form-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 2px solid $grey4;
+                    padding-bottom: 24px;
+
+                    .check-form1 {
+                        
+                        .check-form-text {
+                            padding: 12px 20px;
+                            border-radius: 4px;
+                            border: 1px solid $light-grey2;
+                            min-width: 261px;   
+                        }
+                    }
+
+                    
+                    .check-form2 {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        border: 2px solid $primary-red;
+                        background-color: $primary-red;
+                        background-image: url(../img/search2.png);
+                        background-repeat: no-repeat;
+                        background-position: 50%;
+                        cursor: pointer; 
+                    }
+                }   
+                
+                .check-button-wrap {
+                    margin-top: 24px;
+                    .check-button {
+                        margin-bottom: 8px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                        .check-btn {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        }
+
+
+        .checkboxes-R {
+            width: 66%;
+            
+            @media screen and (max-width: $breakpoint-lg) {
+                width: 100%;
+            }  
+            .check-R-wrapper {
+                .check-R-part {
+                    padding: 24px;
+                    background-color: $white;
+                    box-shadow: 2px 2px 8px 2px $light-grey2;
+                    margin-bottom: 24px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .check-R-title {
+                        font-size: 24px;
+                        font-weight: 700;
+                        margin-bottom: 8px;
+                        color: $black;
+                    }
+                    .check-R-subtitle {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: $grey;
+                        margin-bottom: 24px;
+                    }
+                    .subtext1 {
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: $black;
+                        margin-bottom: 8px;
+                        padding-left: 20px;
+                        position: relative;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            width: 12px;
+                            height: 24px;
+                            background-image: url(../img/Link1.png);
+                            background-repeat: no-repeat;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+
+                    .subtext2-wrap {
+                        display: flex;
+                        justify-content: start;
+                        position: relative;
+                        padding-left: 20px;
+                        margin-bottom: 8px;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            width: 16px;
+                            height: 24px;
+                            background-image: url(../img/Link2.png);
+                            background-repeat: no-repeat;
+                            top: 0;
+                            left: 0;
+                        }
+                        .subsubtext1 {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $black;
+                            border-right: 2px solid $black;
+                            padding-right: 10px;
+                        }
+                        .subsubtext2 {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $black;
+                            padding-left: 10px;
+                        }
+                    }
+
+                    .subtext3-wrap {
+                        display: flex;
+                        justify-content: start;
+                        margin-bottom: 8px;
+                        padding-left: 20px;
+                        position: relative;
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            width: 16px;
+                            height: 24px;
+                            background-image: url(../img/Link3.png);
+                            background-repeat: no-repeat;
+                            top: 0;
+                            left: 0;
+                        }
+
+                        .subsubtext1 {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $black;
+                            border-right: 2px solid $black;
+                            padding-right: 10px;
+                        }
+                        .subsubtext2 {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $black;
+                            padding-left: 10px;
+                        }
+                    }
+
+                    .subtext4-wrap {
+                        display: flex;
+                        justify-content: start;
+                        margin-bottom: 24px;
+                        padding-left: 20px;
+                        position: relative;
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            width: 16px;
+                            height: 24px;
+                            background-image: url(../img/Link4.png);
+                            background-repeat: no-repeat;
+                            top: 0;
+                            left: 0;
+                        }
+
+                        .subsubtext1 {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $black;
+                            border-right: 2px solid $black;
+                            padding-right: 10px;
+                        }
+                        .subsubtext2 {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: $black;
+                            padding-left: 10px;
+                        }
+                    }
+
+                    .check-R-text {
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 27px;
+                        margin-bottom: 24px;
+                        color: $black;
+                    }
+
+                    .btn-R-wrap {
+                        display: flex;
+                        justify-content: start;
+
+                        .button-R1 {
+                            margin-right: 8px;
+                            .btn-R1 {
+                                display: block;
+                            }
+                        }
+
+                        .button-R2 {
+                            .btn-R2 {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

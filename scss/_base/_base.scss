@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: Inter, sans-serif;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+p {
+    margin-top: 0;
+}
+
+.basic-width {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.btn-primary {
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: 2px solid $primary-red;
+    background-color: $primary-red;
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: 2px solid $primary-red;
+    background-color: $white;
+    color: $primary-red;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.container {
+    padding: 0 30px;
+
+    @media screen and (min-width: $breakpoint-md) {
+        max-width: 708px;
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width: $breakpoint-lg) {
+        max-width: 964px;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
+        max-width: 1380px; 
+    }
+
+    @media screen and (min-width: $breakpoint-xxl) {
+        max-width: 1660px; 
+    }
+}

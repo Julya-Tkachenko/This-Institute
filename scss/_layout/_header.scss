@@ -1,0 +1,483 @@
+
+.basic-width {
+	position: relative;
+}
+.header {
+	background-color: $black;
+	border-bottom: 2px solid $white;
+	position: relative;
+	z-index: 20;
+
+	.header-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.wrapper1 {
+			padding: 31px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.header-logo {
+				margin-right: 70px;
+
+				@media screen and (max-width: $breakpoint-xl) {
+					margin-right: 30px;
+				}
+			}
+
+			.header-menu {
+				display: flex;
+				justify-content: space-between;
+
+				@media screen and (max-width: $breakpoint-xl) {
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 100%;
+					height: 100vh;
+					background-color: $white;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 25px;
+					transform: translateY(-10%);
+					opacity: 0;
+					visibility: hidden;
+					transition: all 0.3s ease;
+					z-index: 99;
+					padding: 45px;
+					overflow: scroll;
+
+					&.active {
+						transform: translateY(0);
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+
+				
+				.menu {
+					display: flex;
+					justify-content: space-between;
+
+					@media screen and (max-width: $breakpoint-xl) {
+						flex-direction: column;
+						gap: 20px;
+						width: 100%;
+					}
+					
+					li {
+						margin-right: 51px;
+						position: relative;
+
+						@media screen and (max-width: $breakpoint-xl) {
+							border-bottom: 2px solid $light-grey;
+							padding-bottom: 15px;
+							margin-right: 0;
+						}
+	
+						a {
+							color: $white;
+							font-size: 18px;
+							font-weight: 400;
+							transition: all 0.3s ease;
+
+							&:hover {
+									color: $primary-red;
+								}
+
+							@media screen and (max-width: $breakpoint-xl) {
+								color: $black;
+								font-size: 14px;
+							}
+						}
+					}
+
+					.has-submenu {
+						position: relative;
+
+						
+						& > a {
+							color: $white;
+							font-size: 18px;
+							font-weight: 400;
+							position: relative;
+
+
+							@media screen and (max-width: $breakpoint-xl) {
+								font-size: 14px;
+								color: $black;
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+							}
+
+							&::after {
+								content: "";
+								position: absolute;
+								width: 9px;
+								height: 9px;
+								right: -19px;
+								top: 5px;
+								border-bottom: 2px solid $white;
+								border-right: 2px solid $white;
+								transform: rotate(45deg);
+								transition: border-color 0.3s;
+
+								@media screen and (max-width: $breakpoint-xl) {
+									border-bottom: 2px solid $primary-red;
+									border-right: 2px solid $primary-red;
+									right: 10px;
+								}
+							}
+						}
+
+						// hover для всього li, щоб і текст, і стрілка змінювались разом
+						&:hover > a {
+							color: $primary-red;
+
+							&::after {
+								border-color: $primary-red;
+							}
+						}
+					}
+				}
+
+
+				.menu {
+					li {
+						.header-sublist-wrap {
+							visibility: hidden;
+							opacity: 0;
+							position: absolute;
+							left: -95px;
+							display: none;
+							padding-top:55px;
+							
+							@media screen and (max-width: $breakpoint-xl) {
+								position: relative;
+								left: 0;
+								padding-top: 0;
+							}
+						}
+
+						.header-sublist {
+							background: $white;
+							padding-left: 0;
+
+							@media screen and (max-width: $breakpoint-xl) {
+								background: $light-grey;
+							}
+						}
+					}
+				}
+
+				.menu li:hover .header-sublist-wrap,
+		        .menu li .header-sublist-wrap:hover {
+					visibility: visible;
+					opacity: 1;
+					display: block;
+					width: 285px;
+					text-align: start;
+					//box-shadow: 0px 3px -1px #ccc;
+
+					@media screen and (max-width: $breakpoint-xl) {
+						width: 100%;
+						
+					}
+				}
+
+
+				.menu li ul li {
+					clear: both;
+					width: 100%;
+					text-align: start;
+					border-bottom: 2px solid $light-grey;
+					//padding-bottom: 20px;
+					//padding-top: 20px;
+					margin-right: 0;
+					
+					@media screen and (max-width: $breakpoint-xl) {
+						border-bottom: 2px solid rgb(235 234 234) ;
+						padding-bottom: 0;
+					}
+
+
+					a {
+						color: $black;
+						display: block;
+						padding: 16px 24px;	
+					}
+
+					&:last-child {
+						border-bottom: none;
+					}	
+				}
+	
+				.menu li .header-sublist {
+					//padding: 20px 16px;
+		
+					li {
+						//padding: 0;
+						//margin: 0;
+					}
+		
+					a {
+						background: none;
+						color: $black;
+						//padding: 30px;
+					}
+				}
+
+
+				.menu li ul li:hover {
+					background-color: $light-grey;
+					border-right: 2px solid $primary-red;
+
+					@media screen and (max-width: $breakpoint-xl) {
+						border-right: 0;
+					}
+				}
+
+				.menu li ul li a:hover {
+					background-color: $light-grey;
+					color: $primary-red;
+					
+					@media screen and (max-width: $breakpoint-xl) {
+						color: $black;
+					}
+				}
+
+
+				.has-subsubmenu {
+					position: relative;
+						& > a {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							position: relative;
+
+							&::after {
+							position: absolute;
+							display: block;
+							content: "";
+							width: 9px;
+							height: 9px;
+							right: 11px;
+							top: 19px;
+							border-bottom: 2px solid $primary-red;
+							border-right: 2px solid $primary-red;
+							transform: rotate(-45deg);	
+						}
+					}
+				}
+				
+
+
+				.menu {
+					.header-sublist {
+						.header-sublist2 {
+							visibility: hidden;
+							opacity: 0;
+							position: absolute;
+							left: 100%;
+							display: none;
+							background-color: $white;
+							top: -1px;
+							
+							@media screen and (max-width: $breakpoint-xl)  {
+								position: static;
+								background-color: rgb(235 234 234);
+							}
+						}
+					}
+				}
+            
+
+				.menu .header-sublist li:hover .header-sublist2,
+				.menu .header-sublist li .header-sublist2:hover {
+					visibility: visible;
+					opacity: 1;
+					display: block;
+					width: 285px;
+					text-align: start;
+
+					@media screen and (max-width: $breakpoint-xl) {
+						width: 100%;
+					}
+				}
+
+				@media screen and (max-width: $breakpoint-xl) {
+					.has-submenu {
+						.header-sublist-wrap {
+						visibility: hidden;
+						opacity: 0;
+						height: 0;
+						overflow: hidden;
+						display: block; // важливо: не display: none, інакше transition не спрацює
+						transition: all 0.3s ease;
+						width: 100%;
+						}
+
+						&.open {
+							.header-sublist-wrap {
+								visibility: visible;
+								opacity: 1;
+								height: auto;
+								overflow: visible;
+								margin-top: 10px;
+								border-top: 2px solid $primary-red;
+								margin-bottom: -15px;
+							}
+
+							// Повертаємо стрілку вгору
+							& > a::after {
+								transform: rotate(-135deg);
+								transition: all 0.3s ease;
+							}		
+						}
+					}
+                }
+
+					/* ДРУГИЙ РІВЕНЬ - під-підменю */
+				@media screen and (max-width: $breakpoint-xl) {
+					.has-subsubmenu {
+						.header-sublist2 {
+							display: block;
+							visibility: hidden;
+							opacity: 0;
+							height: 0;
+							overflow: hidden;
+							transition: all 0.3s ease;
+						}
+
+						&.open {
+							.header-sublist2 {
+								visibility: visible;
+								opacity: 1;
+								height: auto;
+								overflow: visible;
+							}
+
+							& > a::after {
+								transform: rotate(-135deg);
+								transition: all 0.3s ease;
+							}
+						}
+					}
+				}
+			}
+
+			
+			.search-button {
+				margin-right: 20px;
+
+				@media screen and (max-width: $breakpoint-xl) {
+					display: none;
+				}
+	
+				.search-btn {
+					width: 25px;
+					height: 26px;
+					background-image: url(../img/search2.png);
+					background-repeat: no-repeat;
+					background-color: $black;
+					background-position: bottom;
+				}
+			}
+		}
+
+		.wrapper2 {
+			border-left: 2px solid $white;
+			padding-left: 24px;
+			padding-top: 24px;
+			padding-bottom: 24px;
+
+			@media screen and (max-width: $breakpoint-xl) {
+                    display: none;
+            }
+		}
+
+		.wrapper3 {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.search-button {
+				display: none;
+				@media screen and (max-width: $breakpoint-xl) {
+						display: block;
+				}
+				.search-btn {
+					width: 25px;
+					height: 26px;
+					background-image: url(../img/search2.png);
+					background-repeat: no-repeat;
+					background-color: $black;
+					background-position: bottom;
+				}
+			}
+
+			.burger {
+				position: relative;
+				width: 30px;
+				height: 22px;
+				cursor: pointer;
+				display: none;
+				z-index: 100;
+
+				span,
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					width: 100%;
+					height: 3px;
+					background-color: $white;
+					transition: all 0.3s ease;
+					border-radius: 2px;
+				}
+
+				span {
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				&::before {
+					top: 0;
+				}
+
+				&::after {
+					bottom: 0;
+				}
+
+				&.active {
+					span {
+						transform: translateY(-50%) rotate(45deg);
+					}
+
+					&:before {
+						transform: translateY(10px) rotate(-45deg);
+					}
+
+					&::after {
+						opacity: 0;
+					}
+				}
+
+				@media screen and (max-width: $breakpoint-xl) {
+					display: block;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
